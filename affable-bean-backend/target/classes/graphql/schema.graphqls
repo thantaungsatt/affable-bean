@@ -1,0 +1,15 @@
+
+
+type Query{
+	listAllProducts:[ProductDetailsInfo]
+	listPorductsByCaregoryName(name:String):[ProductDetailsInfo]
+}
+
+
+type ProductDetailsInfo{
+	id:ID!
+	name:String!
+	price:Float!
+	description:String!
+	categoryName:String!
+}

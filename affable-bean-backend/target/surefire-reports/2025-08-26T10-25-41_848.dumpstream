@@ -1,0 +1,5 @@
+# Created at 2025-08-26T10:25:42.538
+Boot Manifest-JAR contains absolute paths in classpath 'D:\bootcamp - 13\Spring\affable-bean-backend\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

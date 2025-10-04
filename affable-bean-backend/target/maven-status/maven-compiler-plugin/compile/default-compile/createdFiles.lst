@@ -1,0 +1,9 @@
+com\example\demo\AffableBeanBackendApplication.class
+com\example\demo\controller\AffableBeanController.class
+com\example\demo\dao\CategoryDao.class
+com\example\demo\dto\ProductDetailsInfo.class
+com\example\demo\dao\ProductDao.class
+com\example\demo\entity\Category.class
+com\example\demo\service\AffableBeanServivce.class
+com\example\demo\entity\Product.class
+com\example\demo\graphql\AffableBeanGraphqlController.class
