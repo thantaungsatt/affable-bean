@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/masterLayout :: layout(~{::main})}"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+  <main role="main">
+    <div class="container my-4">
+      <div class="row align-items-center mb-4">
+        <div class="col">
+          <h1 class="h3 mb-1 text-dark">Checkout</h1>
+          <p class="text-secondary mb-0">Please provide the following information to complete your purchase.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: Form -->
+        <div class="col-12 col-lg-7 d-flex">
+          <div class="card border-warning bg-warning-subtle shadow-sm h-100 w-100">
+            <div class="card-header border-warning bg-warning text-dark fw-semibold">
+              Payment Details
+            </div>
+            <div class="card-body">
+              <form th:action="@{/ui/products/purchase}" method="post" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label for="fromAccount" class="form-label fw-semibold">Account Number</label>
+                  <input type="text" class="form-control border-warning" id="fromAccount" name="fromAccount" placeholder="e.g., 1234 5678 9012" required>
+                  <div class="invalid-feedback">Please enter your account number.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="username" class="form-label fw-semibold">Username</label>
+                  <input type="text" class="form-control border-warning" id="username" name="username" placeholder="Your account username" required>
+                  <div class="invalid-feedback">Username is required.</div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="code" class="form-label fw-semibold">Code</label>
+                  <input type="text" class="form-control border-warning" id="code" name="code" placeholder="One-time code" required>
+                  <div class="form-text text-dark">Check your email or SMS for the code.</div>
+                  <div class="invalid-feedback">Please provide your code.</div>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">
+                  Checkout
+                </button>
+              </form>
+            </div>
+            <div class="card-footer border-warning bg-warning-subtle text-dark">
+              <small>Your details are processed securely. We never store your code.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Summary -->
+        <div class="col-12 col-lg-5 d-flex">
+          <div class="card border-warning bg-warning-subtle shadow-sm h-100 w-100">
+            <div class="card-header border-warning bg-warning text-dark fw-semibold">
+              Order Summary
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="badge text-bg-warning">Info</span>
+                <span class="text-dark">Next day delivery is guaranteed.</span>
+              </div>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item px-0 d-flex align-items-start bg-warning-subtle">
+                  <i class="bi bi-truck me-2"></i>
+                  <span class="text-dark">A $10 delivery charge applies to all orders.</span>
+                </li>
+              </ul>
+
+              <div class="border rounded-3 p-3 bg-warning-subtle mt-auto border-warning">
+                <div class="d-flex justify-content-between">
+                  <span class="text-dark">SubTotal</span>
+                  <span class="fw-semibold" th:text="${'$' + subTotal}">$0</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-dark">Delivery Charge</span>
+                  <span class="fw-semibold">$10</span>
+                </div>
+                <hr class="my-2 border-dark">
+                <div class="d-flex justify-content-between">
+                  <span class="fw-semibold text-dark">Total</span>
+                  <span class="fw-bold" th:text="${'$' + (subTotal + 10)}">$0</span>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <small class="text-dark">Prices shown in USD. Taxes may apply at checkout.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap validation -->
+    <script>
+      (function () {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      })();
+    </script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/masterLayout :: layout(~{::main})}"
+  xmlns:th="http://www.thymeleaf.org">
+
+<body>
+  <main role="main">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="p-3">Welcome to the online home of the Affable Bean Green
+            Grocer.</h3>
+          <br>
+          <p class="lead p-3" style="text-align: justify !important;">Enjoy
+            browsing and learning more about our unique home delivery service
+            bringing you fresh organic produce,dairy,meats,breads and other
+            delicious and healthy items to you doorstep.</p>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <div class="position-relative">
+                <a th:href="@{/ui/products/category/dairy}"><img th:src="@{/images/categories/dairy.jpg}"
+                  class="img-fluid p-1 mb-3 rounded shadow" alt="Diary Image">
+                <div class="position-absolute top-0 start-0 p-3 w-100">
+                  <h3 class="m-0 text-white text-shadow">Diary</h3>
+                </div>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="position-relative">
+                <a th:href="@{/ui/products/category/meats}"><img th:src="@{/images/categories/meats.jpg}"
+                  class="img-fluid p-1 mb-3 rounded shadow" alt="Diary Image">
+                <div class="position-absolute top-0 start-0 p-3 w-100">
+                  <h3 class="m-0 text-white text-shadow">Meat</h3>
+                </div></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="position-relative">
+                <a th:href="@{/ui/products/category/bakery}"><img th:src="@{/images/categories/bakery.jpg}"
+                  class="img-fluid p-1 mb-3 rounded shadow" alt="Diary Image">
+                <div class="position-absolute top-0 start-0 p-3 w-100">
+                  <h3 class="m-0 text-white text-shadow">Bakery</h3>
+                </div></a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="position-relative">
+                <a th:href="@{/ui/products/category/fruit_veg}"><img th:src="@{/images/categories/fruitveg.jpg}"
+                  class="img-fluid p-1 mb-3 rounded shadow" alt="Diary Image">
+                <div class="position-absolute top-0 start-0 p-3 w-100">
+                  <h3 class="m-0 text-white text-shadow">Fruit &amp; Veg</h3>
+                </div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

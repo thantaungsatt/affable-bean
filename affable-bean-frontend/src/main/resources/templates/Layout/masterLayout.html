@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html th:fragment="layout(main)" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="../../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="../../static/bootstrap/css/app.css"
+	th:href="@{/bootstrap/css/app.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+	integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<section>
+		<head>
+<div class="container">
+	<img id="logo" src="../../static/images/logo.png"
+		th:src="@{/images/logo.png}" alt="images"> <img id="logoText"
+		src="../../static/images/logoText.png"
+		th:src="@{/images/logoText.png}" alt="images"> <img id="stalk"
+		src="../../static/images/stalk.png" th:src="@{/images/stalk.png}"
+		alt="images">
+</div>
+		</head>
+	</section>
+
+	<div th:replace="${main}"></div>
+</body>
+</html>
